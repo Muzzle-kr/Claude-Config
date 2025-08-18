@@ -1,0 +1,16 @@
+# Computer-specific files and directories
+shell-snapshots/
+statsig/
+todos/
+projects/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

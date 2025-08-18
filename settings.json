@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "defaultMode": "allow",
+    "tools": {
+      "serena": {
+        "allowed": true,
+        "alwaysAllow": true
+      },
+      "mcp__serena__*": {
+        "allowed": true,
+        "alwaysAllow": true
+      }
+    }
+  },
+  "env": {
+    "EDITOR": "code",
+    "BROWSER": "open"
+  },
+  "hooks": {
+    "preToolCall": null,
+    "postToolCall": null
+  },
+  "model": "claude-3-5-sonnet-20241022",
+  "statusLine": {
+    "enabled": true,
+    "showWorkingDirectory": true,
+    "showGitStatus": true,
+    "showModel": false
+  },
+  "additionalDirectories": [],
+  "preferences": {
+    "confirmDangerousCommands": true,
+    "autoSave": true,
+    "verboseLogging": false,
+    "includeCoAuthor": false
+  }
+}
