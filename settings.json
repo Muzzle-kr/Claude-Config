@@ -1,6 +1,65 @@
 {
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/claude_notify.sh stop"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/claude_notify.sh notification"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash(command:git*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Git command detected: executing with caution'"
+          }
+        ]
+      }
+    ],
+    "preToolCall": null,
+    "postToolCall": null
+  },
+  "model": "claude-3-5-sonnet-20241022",
+  "includeCoAuthoredBy": false,
   "permissions": {
     "defaultMode": "allow",
+    "allow": [
+      "Read(path:/Users/muzzle/Desktop/coding/*)",
+      "Edit(path:/Users/muzzle/Desktop/coding/*)",
+      "Write(path:/Users/muzzle/Desktop/coding/*)",
+      "Bash(command:npm*)",
+      "Bash(command:yarn*)",
+      "Bash(command:node*)",
+      "Bash(command:python*)",
+      "Bash(command:git add*)",
+      "Bash(command:git commit*)",
+      "Bash(command:git status*)",
+      "Bash(command:git diff*)"
+    ],
+    "deny": [
+      "Bash(command:rm -rf*)",
+      "Bash(command:sudo*)",
+      "Bash(command:chmod 777*)",
+      "Write(path:/System/*)",
+      "Write(path:/usr/*)"
+    ],
     "tools": {
       "serena": {
         "allowed": true,
@@ -14,13 +73,10 @@
   },
   "env": {
     "EDITOR": "code",
-    "BROWSER": "open"
+    "BROWSER": "open",
+    "NODE_ENV": "development",
+    "LANG": "ko_KR.UTF-8"
   },
-  "hooks": {
-    "preToolCall": null,
-    "postToolCall": null
-  },
-  "model": "claude-3-5-sonnet-20241022",
   "statusLine": {
     "enabled": true,
     "showWorkingDirectory": true,
